@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Test</title>
+  
+  <link rel="stylesheet" href="./main.css">
+  
+
+
+ </head>
+ <body>
+ 	<div class="head">
+  		<button id="goToAdmin" onclick="switchMode('admin')">Admin</button>
+  		<button id="goToClient" onclick="switchMode('client')">Client</button>
+  	</div>
+  	<div id="adminPanel">
+  		<button id="addProduct">+</button>
+		
+		<div id="wrapper">
+		  <div class="cover"></div>
+		  <div class="modal">
+		    <div class="content">
+		      <form>
+		      	<label> Code
+		      		<input type="text" id="formCode">
+		      	</label>
+		      	<label> Name
+		      		<input type="text" id="formName">
+		      	</label>
+		      	<label> Price
+		      		<input type="number" id="formPrice">
+		      	</label>
+		      	<label> Available
+		      		<input type="checkbox" id="formAvailable">
+		      	</label>
+		      	<label> Description
+		      		<textarea id="formDescription"></textarea>
+		      	</label>
+		      	<button id="submitProduct" onclick="additionOfGoods()">Submit</button>
+		      </form>
+		    </div>
+		  </div>
+		 </div>
+
+
+  		<table id="tableProduct">
+		   <caption>Product table</caption>
+		   <tr>
+			    <th>Code</th>
+			    <th>Name</th>
+			    <th>Description</th>
+			    <th>Price</th>
+			    <th>Available</th>
+		   </tr>
+	    </table>
+  	</div>
+  	<div id="clientPanel">
+  		<button id="goToBasket">&#128722;</button>
+  	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  	<script type="text/javascript" src="./js/main.js"></script>
+  	<script type="text/javascript" src="./js/modal.js"></script>
+ </body>
+</html>
