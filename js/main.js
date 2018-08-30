@@ -19,23 +19,29 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 		returnObj.available == true ? 
 		td5.appendChild(document.createTextNode("+")) :
 		td5.appendChild(document.createTextNode("-"));
+		// let td6 = document.createElement('TD');
+		// td6.innerHTML += '<button>&#128394;</button>';
+		// td6.childNodes[0].id = "editBtn";
+		let td7 = document.createElement('TD');
+		td7.innerHTML += '<button>X</button>';
+		td7.childNodes[0].onclick = function(){ table.deleteRow(this.parentNode.parentNode.rowIndex); localStorage.removeItem(localStorage.key(i)); };
+		
 		
 		tr.appendChild(td1); 
 		tr.appendChild(td2); 
 		tr.appendChild(td3); 
 		tr.appendChild(td4); 
-		tr.appendChild(td5); 
+		tr.appendChild(td5);
+		// tr.appendChild(td6); 
+		tr.appendChild(td7); 
 		table.appendChild(tr)
 	}
-	
-let ID = function () {
-  // Math.random should be unique because of its seeding algorithm.
-  // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-  // after the decimal.
+
+let ID = () => {
   return '_' + Math.random().toString(36).substr(2, 9);
 };
 
-function additionOfGoods(){
+let additionOfGoods = (id) => {
 	let name = document.getElementById('formName').value;
 	let code = document.getElementById('formCode').value;
 	let price = document.getElementById('formPrice').value;
@@ -53,14 +59,11 @@ function additionOfGoods(){
 
 	let serialObj = JSON.stringify(object);
 	
-	localStorage.setItem(ID(), serialObj);
-	
-
-	
+	localStorage.setItem(id, serialObj);	
 }
 
 
-function switchMode(str){
+let switchMode = (str) => {
 	switch(str){
 		case 'admin' : 
 			clientBlock.style.display = "none";

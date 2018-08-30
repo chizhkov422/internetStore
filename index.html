@@ -38,7 +38,7 @@
 		      	<label> Description
 		      		<textarea id="formDescription"></textarea>
 		      	</label>
-		      	<button id="submitProduct" onclick="additionOfGoods()">Submit</button>
+		      	<button id="submitProduct" onclick="additionOfGoods(sessionStorage.getItem('id'))">Submit</button>
 		      </form>
 		    </div>
 		  </div>
@@ -53,6 +53,8 @@
 			    <th>Description</th>
 			    <th>Price</th>
 			    <th>Available</th>
+			    <!-- <th>Edit</th> -->
+			    <th>Remove</th>
 		   </tr>
 	    </table>
   	</div>
