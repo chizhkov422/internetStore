@@ -9,7 +9,7 @@ body {
       display: inline-block;
       width: 80px;
       height: 30px;
-      background-color: gray; }
+      background-color: grey; }
     body .head #goToAdmin {
       float: left; }
     body .head #goToClient {
@@ -19,21 +19,28 @@ body {
     body #adminPanel #addProduct {
       display: inline-block;
       float: right;
-      width: 60px;
-      height: 25px; }
+      width: 80px;
+      height: 30px; }
     body #adminPanel table {
       display: inline-block;
       float: left;
       width: 80%;
-      border-spacing: 20px; }
-      body #adminPanel table td {
-        text-align: center; }
+      border-spacing: 0px;
+      border-collapse: collapse; }
+      body #adminPanel table caption {
+        font-size: 20px;
+        color: red;
+        padding-bottom: 10px; }
+      body #adminPanel table td, body #adminPanel table th {
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px 20px; }
   body #clientPanel {
     display: none; }
     body #clientPanel #goToBasket {
       float: right;
-      width: 60px;
-      height: 25px; }
+      width: 80px;
+      height: 30px; }
   body .cnt {
     text-align: center; }
   body .cover {

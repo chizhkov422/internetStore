@@ -15,9 +15,10 @@
   		<button id="goToAdmin" onclick="switchMode('admin')">Admin</button>
   		<button id="goToClient" onclick="switchMode('client')">Client</button>
   	</div>
+  	<!--Admin page-->
   	<div id="adminPanel">
   		<button id="addProduct">+</button>
-		
+		<!--modal window-->
 		<div id="wrapper">
 		  <div class="cover"></div>
 		  <div class="modal">
@@ -35,6 +36,7 @@
 		      	<label> Available
 		      		<input type="checkbox" id="formAvailable">
 		      	</label>
+		      	<!-- <input type="file" id="uploadFile"> -->
 		      	<label> Description
 		      		<textarea id="formDescription"></textarea>
 		      	</label>
@@ -44,7 +46,7 @@
 		  </div>
 		 </div>
 
-
+		<!--Products table-->
   		<table id="tableProduct">
 		   <caption>Product table</caption>
 		   <tr>
@@ -53,17 +55,20 @@
 			    <th>Description</th>
 			    <th>Price</th>
 			    <th>Available</th>
-			    <!-- <th>Edit</th> -->
+			    <th>Edit</th>
 			    <th>Remove</th>
 		   </tr>
 	    </table>
   	</div>
+  	<!--Client page-->
   	<div id="clientPanel">
   		<button id="goToBasket">&#128722;</button>
   	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   	<script type="text/javascript" src="./js/main.js"></script>
+  	<script type="text/javascript" src="./js/admin.js"></script>
   	<script type="text/javascript" src="./js/modal.js"></script>
+
  </body>
 </html>
