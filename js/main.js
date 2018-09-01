@@ -1,5 +1,3 @@
-let clientBlock = document.getElementById('clientPanel');
-
 //Сreation of id
 let ID = () => {
 	let date = new Date;

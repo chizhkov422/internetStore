@@ -1,5 +1,19 @@
 body {
   padding: 0 20px; }
+  body table {
+    display: inline-block;
+    float: left;
+    width: 80%;
+    border-spacing: 0px;
+    border-collapse: collapse; }
+    body table caption {
+      font-size: 20px;
+      color: red;
+      padding-bottom: 10px; }
+    body table td, body table th {
+      text-align: center;
+      border: 1px solid black;
+      padding: 5px 20px; }
   body .head {
     width: 100%;
     height: 50px;
@@ -17,30 +31,55 @@ body {
   body #adminPanel {
     display: block; }
     body #adminPanel #addProduct {
-      display: inline-block;
       float: right;
       width: 80px;
-      height: 30px; }
-    body #adminPanel table {
-      display: inline-block;
-      float: left;
-      width: 80%;
-      border-spacing: 0px;
-      border-collapse: collapse; }
-      body #adminPanel table caption {
-        font-size: 20px;
-        color: red;
-        padding-bottom: 10px; }
-      body #adminPanel table td, body #adminPanel table th {
-        text-align: center;
-        border: 1px solid black;
-        padding: 5px 20px; }
+      height: 80px;
+      border-radius: 50%;
+      font-size: 35px;
+      position: fixed;
+      top: 85%;
+      left: 92.5%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); }
+      body #adminPanel #addProduct:hover {
+        box-shadow: 0 0 30px red; }
   body #clientPanel {
     display: none; }
+    body #clientPanel #tableOrder {
+      width: 450px; }
     body #clientPanel #goToBasket {
       float: right;
       width: 80px;
-      height: 30px; }
+      height: 80px;
+      border-radius: 50%;
+      font-size: 35px;
+      position: fixed;
+      top: 85%;
+      left: 92.5%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); }
+      body #clientPanel #goToBasket:hover {
+        box-shadow: 0 0 30px red; }
+    body #clientPanel .product {
+      width: 1000px;
+      overflow: hidden;
+      border: 1px solid black;
+      padding: 10px 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      margin-bottom: 50px; }
+      body #clientPanel .product h4 {
+        font-weight: normal; }
+      body #clientPanel .product .description {
+        display: inline-block;
+        float: left;
+        width: 85%; }
+      body #clientPanel .product .price {
+        display: inline-block;
+        float: right;
+        width: 10%;
+        text-align: left; }
+        body #clientPanel .product .price button {
+          width: 40px;
+          height: 30px;
+          border-redius: 20%; }
   body .cnt {
     text-align: center; }
   body .cover {
@@ -67,17 +106,18 @@ body {
     z-index: 200; }
   body .content {
     display: none;
-    width: 400px;
+    width: 300px;
     margin: 0 auto;
     position: relative;
     background-color: white;
+    border-radius: 10px;
     z-index: 300;
-    padding: 20px 10px; }
+    padding: 20px 25px; }
     body .content form {
       text-align: left; }
       body .content form textarea {
         height: 50px;
-        width: 200px; }
+        width: 250px; }
       body .content form label {
         width: 100px;
         margin-bottom: 20px;
@@ -85,6 +125,20 @@ body {
       body .content form button {
         width: 80px;
         height: 30px; }
+  body .contentBasket {
+    display: none;
+    overflow: hidden;
+    width: 600px;
+    margin: 0 auto;
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 300;
+    padding: 20px 25px; }
+    body .contentBasket button {
+      float: right;
+      width: 80px;
+      height: 30px; }
   body .open-modal-btn {
     cursor: pointer; }
 

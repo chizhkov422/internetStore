@@ -65,6 +65,7 @@ let additionOfGoods = (id) => {
 		price : price,
 		available : available,
 		description : description,
+		selected : false,
 		// file : urlFile
 	};
 

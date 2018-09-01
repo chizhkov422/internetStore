@@ -19,7 +19,7 @@
   	<div id="adminPanel">
   		<button id="addProduct">+</button>
 		<!--modal window-->
-		<div id="wrapper">
+		<div class="wrapper">
 		  <div class="cover"></div>
 		  <div class="modal">
 		    <div class="content">
@@ -63,11 +63,29 @@
   	<!--Client page-->
   	<div id="clientPanel">
   		<button id="goToBasket">&#128722;</button>
+
+  		<!--modal window-->
+		<div class="wrapper">
+		  <div class="cover"></div>
+		  <div class="modal">
+		    <div class="contentBasket">
+		      	<table id="tableOrder">
+		   			<caption>Order table</caption>
+		   			<tr>
+				    	<th>Name</th>
+				    	<th>Price</th>
+		   			</tr>
+	    		</table>
+	    		<button onclick="buy()">Buy</button>
+		    </div>
+		  </div>
+		 </div>
   	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   	<script type="text/javascript" src="./js/main.js"></script>
   	<script type="text/javascript" src="./js/admin.js"></script>
+  	<script type="text/javascript" src="./js/client.js"></script>
   	<script type="text/javascript" src="./js/modal.js"></script>
 
  </body>
