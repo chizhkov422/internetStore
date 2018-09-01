@@ -35,6 +35,7 @@ btnBasket.on('click', () => {
   //fill in the order table with data from the local store
   for ( let i = 0, len = localStorage.length; i < len; ++i ) {
     let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
+    
     if(returnObj.selected){
       let tr = document.createElement('TR');
       let td1 = document.createElement('TD');

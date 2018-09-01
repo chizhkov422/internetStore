@@ -76,6 +76,7 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 function buy() {
 	let deleteButton = document.getElementsByClassName('deleteButton');
 	let addButton = document.getElementsByClassName('addButton');
+	
 	for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 		let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
 		if(returnObj.selected){
