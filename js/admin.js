@@ -1,10 +1,9 @@
-let adminBlock = document.getElementById('adminPanel');
-let table = document.getElementById('tableProduct').getElementsByTagName("TBODY")[0];
+const adminBlock = document.getElementById('adminPanel');
+const table = document.getElementById('tableProduct').getElementsByTagName("TBODY")[0];
 
 //Drawing a table with data from local storage
 for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 	let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
-	let resultAvailable;		  		
 	let tr = document.createElement('TR');
 	let td1 = document.createElement('TD');
 	td1.appendChild(document.createTextNode(returnObj.code));
@@ -39,7 +38,7 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 }
 
 //Adding product data to local storage
-let additionOfGoods = (id) => {
+const additionOfGoods = (id) => {
 	let name = document.getElementById('formName').value;
 	let code = document.getElementById('formCode').value;
 	let price = document.getElementById('formPrice').value;
@@ -59,7 +58,7 @@ let additionOfGoods = (id) => {
 
 
 
-	let object = {
+	const object = {
 		name : name,
 		code : code,
 		price : price,

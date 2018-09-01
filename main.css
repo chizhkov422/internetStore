@@ -70,11 +70,11 @@ body {
       body #clientPanel .product .description {
         display: inline-block;
         float: left;
-        width: 85%; }
+        width: 80%; }
       body #clientPanel .product .price {
         display: inline-block;
         float: right;
-        width: 10%;
+        width: 15%;
         text-align: left; }
         body #clientPanel .product .price button {
           width: 40px;

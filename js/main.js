@@ -1,13 +1,13 @@
 //Сreation of id
-let ID = () => {
-	let date = new Date;
+const ID = () => {
+	const date = new Date;
   	return date.getTime();
 };
 
 
 
 //Switching modes
-let switchMode = (str) => {
+const switchMode = (str) => {
 	switch(str){
 		case 'admin' : 
 			clientBlock.style.display = "none";

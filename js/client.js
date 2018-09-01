@@ -1,5 +1,5 @@
-let clientBlock = document.getElementById('clientPanel');
-let tableOrder = document.getElementById('tableOrder');
+const clientBlock = document.getElementById('clientPanel');
+const tableOrder = document.getElementById('tableOrder');
 
 for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 	let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
@@ -22,6 +22,7 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 
 		let addButton = document.createElement('button');
 		addButton.className = "addButton";
+		addButton.id = localStorage.key( i );
 		returnObj.selected ? 
 			addButton.style.display = "none" :
 			addButton.style.display = "block";
@@ -29,6 +30,7 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 
 		let deleteButton = document.createElement('button');
 		deleteButton.className = "deleteButton";
+		deleteButton.id = localStorage.key( i );
 		returnObj.selected ? 
 			deleteButton.style.display = "block" :
 			deleteButton.style.display = "none";
@@ -73,15 +75,24 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 }
 
 //handler onclick for purchase
-function buy() {
-	let deleteButton = document.getElementsByClassName('deleteButton');
-	let addButton = document.getElementsByClassName('addButton');
-	
+const buy = () => {
+	const deleteButton = document.getElementsByClassName('deleteButton');
+	const addButton = document.getElementsByClassName('addButton');
+
 	for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 		let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
 		if(returnObj.selected){
-			deleteButton[i].style.display = "none";
-			addButton[i].style.display = "block";
+			for(let unit of deleteButton){
+				if(unit.id === localStorage.key( i )){
+					unit.style.display = "none";
+				}
+			}
+			for(let unit of addButton){
+				if(unit.id === localStorage.key( i )){
+					unit.style.display = "block";
+				}
+			}
+			
 			returnObj.selected = false;
 			let serial = JSON.stringify(returnObj);
 			localStorage.setItem(localStorage.key( i ), serial);
