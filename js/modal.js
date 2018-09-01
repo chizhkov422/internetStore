@@ -26,8 +26,13 @@ btnCreate.on('click', () => {
 
 
 btnBasket.on('click', () => {
+  //Clear the table from the duplicating elements
+  for(let i = tableOrder.rows.length-1; i>0; --i){
+      tableOrder.deleteRow(i);
+    }
   modal.fadeIn();
   
+  //fill in the order table with data from the local store
   for ( let i = 0, len = localStorage.length; i < len; ++i ) {
     let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
     if(returnObj.selected){
@@ -68,9 +73,6 @@ $('.modal').click(() => {
     let select = $('.content, .contentBasket');
     if ($(event.target).closest(select).length)
       return;
-    for(let i = 1; i<tableOrder.rows.length; ++i){
-      tableOrder.deleteRow(i);
-    }
     modal.fadeOut();
     wrap.unbind('click');
   });

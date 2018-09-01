@@ -72,6 +72,7 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 	}
 }
 
+//handler onclick for purchase
 function buy() {
 	let deleteButton = document.getElementsByClassName('deleteButton');
 	let addButton = document.getElementsByClassName('addButton');
