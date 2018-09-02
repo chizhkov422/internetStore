@@ -59,6 +59,16 @@
 			    <th>Remove</th>
 		   </tr>
 	    </table>
+	    <table id="adminOrder">
+		   <caption>Order table</caption>
+		   <tr>
+			    <th>Name customer</th>
+			    <th>Surname customer</th>
+			    <th>Phone customer</th>
+			    <th>Code</th>
+			    <th>Price</th>
+		   </tr>
+	    </table>
   	</div>
   	<!--Client page-->
   	<div id="clientPanel">
@@ -77,7 +87,18 @@
 				    	<th>Price</th>
 		   			</tr>
 	    		</table>
-	    		<button onclick="buy()">Buy</button>
+	    		<form>
+			      	<label> Name
+			      		<input type="text" id="customerName">
+			      	</label>
+			      	<label> Surname
+			      		<input type="text" id="customerSurname">
+			      	</label>
+			      	<label> Phone
+			      		<input type="number" id="customerPhone">
+			      	</label>
+			      	<button onclick="buy()">Buy</button>
+		      	</form>
 		    </div>
 		  </div>
 		 </div>

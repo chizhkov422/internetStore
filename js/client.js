@@ -5,7 +5,7 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 	let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
 
 	//The product blocks are drawn
-	if(returnObj.available){
+	if(returnObj.available && !returnObj.ordered){
 		let product = document.createElement('div');
 		product.className = "product";
 		product.id = localStorage.key( i );
@@ -76,27 +76,51 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 
 //handler onclick for purchase
 const buy = () => {
+	event.preventDefault();
 	const deleteButton = document.getElementsByClassName('deleteButton');
 	const addButton = document.getElementsByClassName('addButton');
-
-	for ( let i = 0, len = localStorage.length; i < len; ++i ) {
-		let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
-		if(returnObj.selected){
-			for(let unit of deleteButton){
-				if(unit.id === localStorage.key( i )){
-					unit.style.display = "none";
-				}
-			}
-			for(let unit of addButton){
-				if(unit.id === localStorage.key( i )){
-					unit.style.display = "block";
-				}
-			}
-			
-			returnObj.selected = false;
-			let serial = JSON.stringify(returnObj);
-			localStorage.setItem(localStorage.key( i ), serial);
-		}
+	const customer = {
+		name : document.getElementById('customerName').value,
+		surname : document.getElementById('customerSurname').value,
+		phone : document.getElementById('customerPhone').value
 	}
-modal.fadeOut();
+
+	if((customer.name === "") || (customer.surname === "") || (customer.phone === "")){
+		alert("Fill in all the fields");
+	}else if((/\d/.test(customer.name)) || (/\d/.test(customer.surname))){
+			alert("Name and surname must consist of letters");
+		}else{
+			for ( let i = 0, len = localStorage.length; i < len; ++i ) {
+				let returnObj = JSON.parse(localStorage.getItem( localStorage.key( i ) ));
+				if(returnObj.selected){
+					for(let unit of deleteButton){
+						if(unit.id === localStorage.key( i )){
+							unit.style.display = "none";
+						}
+					}
+					for(let unit of addButton){
+						if(unit.id === localStorage.key( i )){
+							unit.style.display = "block";
+						}
+					}
+					
+					returnObj.selected = false;
+					let serial = JSON.stringify(returnObj);
+					localStorage.setItem(localStorage.key( i ), serial);
+					returnObj.ordered = true;
+					returnObj.customer = customer;
+					serial = JSON.stringify(returnObj);
+					localStorage.setItem(ID(), serial);
+					
+					
+				}
+			}
+			document.getElementById('customerName').value = "";
+			document.getElementById('customerSurname').value = "";
+			document.getElementById('customerPhone').value = "";
+
+			modal.fadeOut();
+			location.reload();
+		}
+	
 }
