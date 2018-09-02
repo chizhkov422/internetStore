@@ -57,6 +57,9 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 		td4.appendChild(document.createTextNode(returnObj.code));
 		let td5 = document.createElement('TD');
 		td5.appendChild(document.createTextNode(returnObj.price + "$"));
+		let td6 = document.createElement('TD');
+		td6.innerHTML += '<button>X</button>';
+		td6.childNodes[0].onclick = function(){ adminTableOrder.deleteRow(this.parentNode.parentNode.rowIndex); localStorage.removeItem(localStorage.key(i)); };
 		
 			
 				
@@ -65,6 +68,7 @@ for ( let i = 0, len = localStorage.length; i < len; ++i ) {
 		tr.appendChild(td3); 
 		tr.appendChild(td4); 
 		tr.appendChild(td5);
+		tr.appendChild(td6);
 		adminTableOrder.appendChild(tr)
 	}
 }

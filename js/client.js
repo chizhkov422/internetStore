@@ -111,8 +111,6 @@ const buy = () => {
 					returnObj.customer = customer;
 					serial = JSON.stringify(returnObj);
 					localStorage.setItem(ID(), serial);
-					
-					
 				}
 			}
 			document.getElementById('customerName').value = "";
