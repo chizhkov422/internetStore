@@ -84,6 +84,7 @@ const buy = () => {
 		surname : document.getElementById('customerSurname').value,
 		phone : document.getElementById('customerPhone').value
 	}
+	const btnBuy = document.getElementsByClassName('btnBuy');
 
 	if((customer.name === "") || (customer.surname === "") || (customer.phone === "")){
 		alert("Fill in all the fields");

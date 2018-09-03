@@ -1,0 +1,226 @@
+body{
+	padding: 0 20px;
+
+	table{
+			display: inline-block;
+			float: left;
+			width: 80%;
+			border-spacing: 0px;
+ 			border-collapse: collapse;
+
+			caption{
+				font-size: 20px;
+				color: red;
+				padding-bottom: 10px;
+			}
+			tr{
+
+			}
+
+			td, th{
+				text-align: center;
+				border: 1px solid black;
+				padding: 5px 20px;
+			}
+		}
+
+	.head{
+		width: 100%;
+		height: 50px;
+		padding-top: 10px;
+		margin-bottom: 50px;
+
+		button{
+			display: inline-block;
+			width: 80px;
+			height: 30px;
+			background-color: grey;
+		}
+
+		#goToAdmin{
+			float: left;
+		}
+
+		#goToClient{
+			float: right;
+		}
+	}
+
+	#adminPanel{
+		display: block;
+
+		#addProduct{
+			float: right;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			font-size: 35px;
+			position: fixed;
+			top: 85%;
+			left: 92.5%;
+			box-shadow: 0 0 30px rgba(0,0,0,0.5);
+
+			&:hover{
+				box-shadow: 0 0 30px red;
+			}
+		}
+
+		#adminOrder{
+			margin-top: 50px;
+		}
+
+		
+	}
+
+	#clientPanel{
+		display: none;
+
+		#tableOrder{
+			display: block;
+			width: 450px;
+			margin-bottom: 20px;
+		}
+
+		#goToBasket{
+			float: right;
+			width: 80px;
+			height: 80px;
+			border-radius: 50%;
+			font-size: 35px;
+			position: fixed;
+			top: 85%;
+			left: 92.5%;
+			box-shadow: 0 0 30px rgba(0,0,0,0.5);
+
+			&:hover{
+				box-shadow: 0 0 30px red;
+			}
+		}
+
+		form{
+			display: block;
+			width: 210px;
+			text-align: left;
+
+			input{
+				margin-bottom: 10px;
+				width: 200px;
+				height: 20px;
+			}
+		}
+
+		.product{
+			width: 1000px;
+			overflow: hidden;
+			border: 1px solid black;
+			padding: 10px 20px;
+			box-shadow: 0 0 20px rgba(0,0,0,0.5);
+			margin-bottom: 50px;
+
+			h4{
+				font-weight: normal;
+			}
+
+			.description{
+				display: inline-block;
+				float: left;
+				width: 80%;
+			}
+
+			.price{
+				display: inline-block;
+				float: right;
+				width: 15%;
+				text-align: left;
+
+				button{
+					width: 40px;
+					height: 30px;
+					border-redius: 20%;
+				}
+			}
+		}
+	}
+
+	.cnt {
+        text-align: center;
+    }
+
+      .cover {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.6;
+        z-index: 100;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        overflow-x: auto;
+        overflow-y: scroll;
+        padding: 20px;
+        z-index: 200;
+      }
+
+      .content{
+        display: none;
+        width: 300px;	
+        margin: 0 auto;
+        position: relative;
+        background-color: white;
+        border-radius: 10px;
+        z-index: 300;
+        padding: 20px 25px;
+		
+		form{
+			text-align: left;
+			textarea{
+				height: 50px;
+				width: 250px;
+			}
+		
+	        label{
+	        	width: 100px;
+	        	margin-bottom: 20px;
+	        	display: block;
+	        }
+
+	        button{
+	        	width: 80px;
+	        	height: 30px;
+	        }
+    	}
+      }
+
+      .contentBasket {
+        display: none;
+        overflow: hidden;
+        width: 600px;	
+        margin: 0 auto;
+        position: relative;
+        background-color: white;
+        border-radius: 10px;
+        z-index: 300;
+        padding: 20px 25px;
+
+        button{
+        	width: 80px;
+        	height: 30px;	
+        }
+		
+      }
+
+      .open-modal-btn {
+        cursor: pointer;
+      }
+}
